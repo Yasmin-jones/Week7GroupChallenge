@@ -4,7 +4,7 @@ p "Setting up test database....."
 
 connection = PG.connect(dbname: 'user_database_test')
 
-#connection.exec("TRUNCATE bookmarks;")
+connection.exec("TRUNCATE users_table_test;")
 
 def enter_database
   connection = PG.connect(dbname: 'user_database_test')

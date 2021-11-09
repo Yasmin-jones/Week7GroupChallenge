@@ -31,7 +31,7 @@ host should be able to name their space, provide a short description of the spac
     So that i can see when a space is available 
     I want to be able to filter/search spaces via dates 
 
-4) Uset story - Any signed-up user can request to hire any space for one night, and this should be approved by the user that owns that space.
+4) User story - Any signed-up user can request to hire any space for one night, and this should be approved by the user that owns that space.
 Nights for which a space has already been booked should not be available for users to book that space. Until a user has confirmed a booking request, that space can still be booked for that night.
 
     As a user of airbnb 

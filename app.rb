@@ -8,6 +8,7 @@ class MakersBnB < Sinatra::Base
 
 
   get '/' do
+    
     erb :homepage
   end
 
@@ -15,7 +16,12 @@ class MakersBnB < Sinatra::Base
     erb :login
   end 
 
-
+  post '/confirm' do 
+    @name = params[:name]
+    @email = params[:email_address] 
+    @password = params[:password]
+    erb :confirm
+  end 
 
   run! if app_file == $0
 end

@@ -6,9 +6,16 @@ class MakersBnB < Sinatra::Base
     register Sinatra::Reloader
   end
 
+
   get '/' do
-    'Hello World'
+    erb :homepage
   end
+
+  get '/login' do 
+    erb :login
+  end 
+
+
 
   run! if app_file == $0
 end

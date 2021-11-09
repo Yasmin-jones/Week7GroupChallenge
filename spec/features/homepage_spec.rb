@@ -1,8 +1,7 @@
-feature 'user logs in homepage' do 
+feature 'user clicks login hyperlink' do 
     scenario 'user visits homepage' do 
             visit('/')
-            expect(page).to have_content 'Hello World'
-    
+            click_on('login')
     end 
     
 end 

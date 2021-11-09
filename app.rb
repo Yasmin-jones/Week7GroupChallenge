@@ -18,6 +18,7 @@ class MakersBnB < Sinatra::Base
 
   post '/confirm' do 
     @name = params[:name]
+    #does this need to be posted here?
     @email = params[:email_address] 
     @password = params[:password]
     erb :confirm

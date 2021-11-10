@@ -24,5 +24,13 @@ class MakersBnB < Sinatra::Base
     erb :confirm
   end 
 
+  get '/viewListings' do 
+    erb :viewListings
+  end 
+
+  get '/addListings' do 
+    erb :addListings
+  end 
+
   run! if app_file == $0
 end

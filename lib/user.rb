@@ -25,7 +25,6 @@ class User
   end
 
 
-
   def self.create(email:, password:, name:)
     encrypted_password = BCrypt::Password.create(password)
 

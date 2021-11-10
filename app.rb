@@ -44,6 +44,7 @@ class MakersBnB < Sinatra::Base
     erb :confirm
   end 
 
+
   get '/confirm' do 
     @user = User.new
     @user.password = params[:password]
@@ -52,6 +53,24 @@ class MakersBnB < Sinatra::Base
     @user.save!
     erb :confirm 
   end 
+
+  get "/viewListings" do
+    erb :viewListings
+  end
+
+get "/addListings" do
+  erb :addListings
+end
+
+  post "/viewLisings" do
+    viewListings.create(params[:description], params[:location], params[:start_date], params[:end_date], params[:price])
+    redirect "/viewListings"
+  end
+
+  get '/request_booking' do
+    "Please confirm booking"
+  end
+
 
   run! if app_file == $0
 end

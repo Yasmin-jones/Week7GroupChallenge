@@ -10,4 +10,13 @@ describe '.all' do
     expect(users).to include{'12345'}
     expect(users).to include{'Fred Smith'}
   end
+
+  describe '.create' do
+    it 'creates a new user' do
+      User.create(email: 'test@gmail.com', password: '123452', name: 'Test Name')
+
+    end
+  end
+
+  
 end

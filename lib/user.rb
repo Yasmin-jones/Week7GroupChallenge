@@ -13,5 +13,9 @@ class User
     result.map { |users| users['email'] }
   end
 
+  def self.create(email:, password:, name:)
+
+  end
+
 end
 

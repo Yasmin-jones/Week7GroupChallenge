@@ -1,4 +1,10 @@
-User stories
+
+
+Additional user story for user securtiy:
+
+   *) As a user so i know that my details are secured I want my password to be encrypted in the database
+
+User stories:
 
 1) User story one - Any signed-up user can list a new space.
 

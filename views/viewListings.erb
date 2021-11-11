@@ -2,13 +2,15 @@
 
 <table>
   <tr>
-    <th>Name</th>
+    <th>Property Details</th>
   </tr>
   <% @listings.each do |listing| %>
     <tr>
-      <td><%= listing.description %></td>
       <td><%= listing.location %></td>
+      <td><%= listing.description %></td>
       <td><%= listing.start_date %></td>
+      <td><%= listing.end_date %></td>
+      <td><%= listing.price %></td>
     </tr>
   <% end %>
 </table>

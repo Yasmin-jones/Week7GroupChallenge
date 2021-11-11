@@ -57,19 +57,20 @@ class MakersBnB < Sinatra::Base
 
   get "/viewListings" do
     @listings = Listing.all
-    p @listings
     erb :viewListings
 
+  end
+
+  post "/viewListings" do
+    Listing.create(description: params[:description],location: params[:location],start_date: params[:start_date],end_date: params[:end_date],price: params[:price])
+    redirect "/viewListings"
   end
 
 get "/addListings" do
   erb :addListings
 end
 
-  post "/viewListings" do
-    Listing.create(params[:description], params[:location], params[:start_date], params[:end_date], params[:price])
-    redirect "/viewListings"
-  end
+
 
   get '/request_booking' do
     "Please confirm booking"

@@ -7,6 +7,7 @@ feature 'user passes information add a new listing' do
       fill_in 'start_date', with: '07/09/2021'
       fill_in 'end_date', with: '09/09/2021'
       fill_in 'price', with: '1000'
-      #click_button 'Upload'
+      click_button 'Upload'
+      expect(page).to have_content 'looks good'
     end 
   end

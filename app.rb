@@ -47,11 +47,11 @@ class MakersBnB < Sinatra::Base
 
 
   get '/confirm' do 
-    @user = User.new
-    @user.password = params[:password]
-    @user.email = params[:email]
-    @user.name = params[:name]
-    @user.save!
+    # @user = User.new
+    # @user.password = params[:password]
+    # @user.email = params[:email]
+    # @user.name = params[:name]
+    # @user.save!
     erb :confirm 
   end 
 

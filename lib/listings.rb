@@ -32,15 +32,15 @@ class Listing
       connection = PG.connect(dbname: 'app_database')
     end
 
-      connection.exec("INSERT INTO app_table (description, location, start_date, end_date, price) 
+     result = connection.exec("INSERT INTO app_table (description, location, start_date, end_date, price) 
                       VALUES('#{description}', '#{location}', '#{start_date}', '#{end_date}', '#{price}')
                       RETURNING description, location, start_date, end_date, price")
-
-                      # p Listing.new(
-                      # description: result[0]['description'],
-                      # location: result[0]['location'],
-                      # start_date: result[0]['start_date'],
-                      # end_date: result[0]['end_date'])
+                      Listing.new(
+                      description: result[0]['description'],
+                      location: result[0]['location'],
+                      start_date: result[0]['start_date'],
+                      end_date: result[0]['end_date'],
+                      price: result[0]['price'])
                     
 
   end

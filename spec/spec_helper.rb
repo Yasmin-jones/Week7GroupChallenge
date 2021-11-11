@@ -13,9 +13,10 @@ require 'rspec'
 require 'features/web_helpers'
 require_relative './setup_test_database_spec'
 
+ENV['ENVIROMENT'] == 'test'
 RSpec.configure do |config|
   config.before(:each) do
-    :setup_test_database
+  'setup_test_database_spec'
   end
   end
 

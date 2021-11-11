@@ -1,8 +1,11 @@
 feature 'user clicks view listings hyperlink' do 
-  scenario 'user visits property listings' do 
+  scenario 'user visits property listings' do
+    connection = PG.connect(dbname: 'app_database')
+    connection.exec("INSERT INTO app_table (description, location, start_date, end_date)
+    VALUES ('Log Cabin', 'Hampshire', '26-09-2022', '31-09-2022');")
          user_login
           click_on('View listings')
-          expect(page).to have_content 'Available Properties'
+          expect(page).to have_content 'Log Cabin'
   end
 end
 

@@ -1,6 +1,20 @@
 <h1>Available Properties</h1>
 
-<form action="/request_booking" method="get">
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% @listings.each do |listing| %>
+    <tr>
+      <td><%= listing.description %></td>
+      <td><%= listing.location %></td>
+      <td><%= listing.start_date %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+<form action="/request_booking" method="post">
 <a href="/request_booking">Request a Booking</a>
 </form>
 

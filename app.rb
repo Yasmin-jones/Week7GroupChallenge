@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/listings'
 
 class MakersBnB < Sinatra::Base
   configure :development do
@@ -25,15 +26,18 @@ class MakersBnB < Sinatra::Base
   end 
 
   get "/viewListings" do
+    @listings = Listing.all
+    p @listings
     erb :viewListings
+
   end
 
 get "/addListings" do
   erb :addListings
 end
 
-  post "/viewLisings" do
-    viewListings.create(params[:description], params[:location], params[:start_date], params[:end_date], params[:price])
+  post "/viewListings" do
+    Listing.create(params[:description], params[:location], params[:start_date], params[:end_date], params[:price])
     redirect "/viewListings"
   end
 

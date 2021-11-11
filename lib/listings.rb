@@ -1,12 +1,13 @@
 require 'pg'
 class Listing
-  attr_reader :location, :description, :start_date, :end_date
+  attr_reader :location, :description, :start_date, :end_date, :price
 
-  def initialize(location:, description:, start_date:, end_date:)
+  def initialize(location:, description:, start_date:, end_date:, price:)
     @location = location
     @description = description 
     @start_date = start_date
     @end_date = end_date
+    @price = price
   end
 
   def self.all

@@ -20,21 +20,21 @@ class Listing
     result = connection.exec("SELECT * FROM app_table;")
     result.map do |listing|
     Listing.new(description: listing['description'], location: listing['location'], 
-              start_date: listing['start_date'], end_date: listing['end_date'])
+              start_date: listing['start_date'], end_date: listing['end_date'], price: listing['price'])
       
       end
   end
 
-  def self.create(description:, location:, start_date:, end_date:)
+  def self.create(description:, location:, start_date:, end_date:, price:)
     if ENV['ENVIROMENT'] == 'test'
       connection = PG.connect(dbname: 'app_database_test')
       else
       connection = PG.connect(dbname: 'app_database')
     end
 
-      connection.exec("INSERT INTO app_table (description, location, start_date, end_date) 
-                      VALUES('#{description}', '#{location}', '#{start_date}', '#{end_date}')
-                      RETURNING description, location, start_date, end_date")
+      connection.exec("INSERT INTO app_table (description, location, start_date, end_date, price) 
+                      VALUES('#{description}', '#{location}', '#{start_date}', '#{end_date}', '#{price}')
+                      RETURNING description, location, start_date, end_date, price")
 
                       # p Listing.new(
                       # description: result[0]['description'],

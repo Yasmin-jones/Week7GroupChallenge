@@ -1,7 +1,8 @@
 
 
 Additional user story for user securtiy:
-*) As a user so i know that my details are secured I want my password to be encrypted in the database
+
+   *) As a user so i know that my details are secured I want my password to be encrypted in the database
 
 User stories:
 

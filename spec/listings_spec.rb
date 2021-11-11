@@ -21,17 +21,18 @@ describe '.all' do
     #expect(listings).to include{'30-07-2022'}
   end
 
-  # describe '.create' do
-  #   it 'creates a new listing' do
-  #     listing = Listing.create(description: 'Beach House', location: 'Miami', start_date: '25-07-2022', end_date: '30-07-2022').first
-  #     p listing
-  #     expect(listing['description']).to eq 'Beach House'
-  #     expect(listing['location']).to eq 'Miami'
-  #     expect(listing['start_date']).to eq '25-07-2022'
-  #     expect(listing['end_date']).to eq '30-07-2022'
+  describe '.create' do
+    it 'creates a new listing' do
+      listing = Listing.create(description: 'Beach House', location: 'Miami', start_date: '25-07-2022', end_date: '30-07-2022', price: '£150')
+      expect(listing).to be_a Listing
+      expect(listing.description).to eq 'Beach House'
+      expect(listing.location).to eq 'Miami'
+      expect(listing.start_date).to eq '25-07-2022'
+      expect(listing.end_date).to eq '30-07-2022'
+      expect(listing.price).to eq '£150'
 
-  #   end
-  # end
+    end
+  end
 
   
 end

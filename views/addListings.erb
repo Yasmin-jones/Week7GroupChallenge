@@ -1,32 +1,97 @@
-<form action="/addListings" method="post">
-<ul>
-  <li>
-     <label for="user_id">user_id:</label>
-    <input type="text" name="user_id">
-  </li>
-  <li>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;
+  height: 95vh;
+}
+
+form {border: 3px solid #f1f1f1;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<h2>Add Listing</h2>
+
+<form action="/confirm" method="post">
+  <div class="imgcontainer">
+    <img src="https://www.cityam.com/wp-content/uploads/2019/11/Centre-Point-view-2019.jpg" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container">
+  <form action="/addListings" method="post">
      <label for="Description">Description:</label>
     <input type="text" name="description">
-  </li>
-    <li>
      <label for="Location">Location:</label>
     <input type="text" name="location">
-  </li>
- <li>
      <label for="Start_date">start_date:</label>
     <input type="text" name="start_date">
-  </li>
- <li>
      <label for="End_date">end_date:</label>
     <input type="text" name="end_date">
-  </li>
-<li>
      <label for="price">price:</label>
     <input type="text" name="price">
-  </li>
-
-  <li>
-    <input type="submit" value="Upload">
-  </li>
-  <ul>
-</form>
+    <input type="file" id="myFile" name="filename">
+    <input type="submit" value="Upload Listing"> 
+  <form>
+</body>
+</html>

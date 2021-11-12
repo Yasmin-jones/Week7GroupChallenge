@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -67,8 +68,130 @@ img.avatar {
 <% if @name %>
  <h1> Welcome <%= @name %> </h1>
  <% end %>
+=======
+
+<head>
+
+<style>
+.button {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #82EEFD}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.signOutButton {
+  padding: 5px 10px;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #000;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 9px #999;
+
+  position:absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.signOutButton:hover {background-color: #82EEFD}
+
+.signOutButton :active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.centerTwo {
+  margin: 0;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.strokeme {
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+
+</style>
+</head>
+
+<body style="background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTl8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80');
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;"> 
+<style>
+h1 {text-align: center;}
+h2 {text-align: center;}
+h1 {
+   font-size: 400%; // makes font bigger on 50% 
+}
+</style>
+
+<form action="/" method="get">
+<div class="centerTwo">
+<button class="signOutButton">Sign Out</button>
+</div>
+</form>
+
+<div class="strokeme">
+<h1 style="color: white;">
+  MakersBnB
+</h1>
+</div>
+<h2> Welcome <%= @name %> </h2>
+>>>>>>> 0f27f717a5cae79fa87bcd76fa351740bf44738d
 
 <form action="/viewListings" method="get">
-<a href="/viewListings">View listings</a>
+<div class="container">
+<button class="button">View listings</button>
+</div>
 </form>
-<a href="/addListings">Add listings</a>
+
+<form action="/addListings" method="get">
+<div class="container">
+<button class="button">Add listings</button>
+</div>
+</form>
+
+
+
+</body>
+</html>

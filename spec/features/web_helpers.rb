@@ -1,3 +1,7 @@
+
+
+
+
 def user_login
   visit('/')
   click_on('login')

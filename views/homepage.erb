@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<body style="background-image: url('https://www.wallpaperbetter.com/wallpaper/783/754/499/ayana-resort-and-spa-bali-wallpaper-2K-middle-size.jpg');
+<body style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&w=1000&q=80');
 background-repeat: no-repeat;
 background-attachment: fixed;
 background-size: cover;"> 
@@ -11,11 +11,6 @@ h3 {text-align: center;}
 h1 {font-size: 500% !important;}
 </style>
 
-<form action="/login" method="get">
-<div class="centerTwo">
-<button class="button">login</button>
-</div>
-</form>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -93,9 +88,45 @@ padding: 10px;
 .checked {
   color: orange;
 }
+
+.centerTwo {
+  position:absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.logButton {
+  padding: 5px 10px;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #000;
+  background-color: #FFF;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 9px #999;
+
+  position:absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.logButton:hover {background-color: #82EEFD}
+
+.logButton :active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
 </style>
 </head>
 <body>
+
+<form action="/login" method="get">
+<button class="logButton">login</button>
+</div>
+</form>
 
 <div class="strokeme">
 <h1 style="color: white;">

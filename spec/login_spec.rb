@@ -14,9 +14,9 @@ describe '.all' do
   describe '.create' do
     it 'creates a new user account' do
       users = User.create(email: 'test@gmail.com', password: '9876', name: 'Benny Timsom')
-
-      expect(users.email).to include{'test@gmail.com'}
-      expect(users.name).to include{'Benny Timsom'}
+      expect(users).to be_a User
+      expect(users.email).to eq 'test@gmail.com'
+      expect(users.name).to eq 'Benny Timsom'
     end
 
     it 'encrypts users password' do 

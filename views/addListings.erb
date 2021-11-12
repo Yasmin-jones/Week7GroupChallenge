@@ -3,44 +3,48 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body {font-family: Arial, Helvetica, sans-serif;
-  height: 95vh;
-}
+h1 {text-align: center;}
 
-form {border: 3px solid #f1f1f1;}
+h3 {text-align: center;}
 
-input[type=text], input[type=password] {
+div {text-align: center;}
+
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
   width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
+  padding: 12px;
   border: 1px solid #ccc;
+  border-radius: 4px;
   box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
 }
 
-button {
+img{
+    width:50%;
+    max-width:600px;
+}
+
+input[type=submit] {
   background-color: #04AA6D;
   color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
+  padding: 12px 20px;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
-  width: 100%;
 }
 
-button:hover {
-  opacity: 0.8;
-}
-
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
+input[type=submit]:hover {
+  background-color: #45A049;
 }
 
 .imgcontainer {
   text-align: center;
   margin: 24px 0 12px 0;
+  border-radius: 50%;
 }
 
 img.avatar {
@@ -49,49 +53,40 @@ img.avatar {
 }
 
 .container {
-  padding: 16px;
-}
-
-span.psw {
-  float: right;
-  padding-top: 16px;
-}
-
-
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
-  }
-  .cancelbtn {
-     width: 100%;
-  }
+  border-radius: 5px;
+  background-color: #F2F2F2;
+  padding: 20px;
 }
 </style>
 </head>
 <body>
 
-<h2>Add Listing</h2>
+<h3>Add Listing</h3>
 
-<form action="/confirm" method="post">
+<form action="/viewListings" method="post">
   <div class="imgcontainer">
     <img src="https://www.cityam.com/wp-content/uploads/2019/11/Centre-Point-view-2019.jpg" alt="Avatar" class="avatar">
   </div>
 
   <div class="container">
-  <form action="/viewListings" method="post">
      <label for="Description">Description:</label>
-    <input type="text" name="description">
-     <label for="Location">Location:</label>
-    <input type="text" name="location">
-     <label for="Start_date">start_date:</label>
-    <input type="text" name="start_date">
-     <label for="End_date">end_date:</label>
-    <input type="text" name="end_date">
-     <label for="price">price:</label>
+    <textarea id="Description" name="Description" placeholder="Write something.." style="height:200px"></textarea>
+    <label for="price">price:</label>
     <input type="text" name="price">
+     <label for="start">Start date:</label>
+    <input type="date" id="start" name="trip-start"
+       value=""
+       min="2021-11-05" max="2999-12-31">
+    <label for="end">Start date:</label>
+    <input type="date" id="end" name="trip-end"
+       value=""
+       min="2021-11-05" max="2999-12-31">
     <input type="file" id="myFile" name="filename">
     <input type="submit" value="Upload Listing"> 
-  <form>
+  </form>
+</div>
+
 </body>
 </html>
+
+

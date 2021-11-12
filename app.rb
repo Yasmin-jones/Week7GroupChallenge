@@ -72,8 +72,8 @@ end
 
 
 
-  get '/request_booking' do
-    "Please confirm booking"
+  get '/requestBooking' do
+    erb :requestBooking
   end
 
 

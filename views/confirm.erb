@@ -36,6 +36,10 @@
   border: none;
   border-radius: 5px;
   box-shadow: 0 9px #999;
+
+  position:absolute;
+  top: 10px;
+  right: 10px;
 }
 
 .signOutButton:hover {background-color: #82EEFD}
@@ -92,6 +96,12 @@ h1 {
 }
 </style>
 
+<form action="/" method="get">
+<div class="centerTwo">
+<button class="signOutButton">Sign Out</button>
+</div>
+</form>
+
 <div class="strokeme">
 <h1 style="color: white;">
   MakersBnB
@@ -99,13 +109,6 @@ h1 {
 </div>
 <h2> Welcome <%= @name %> </h2>
 
-<form action="/" method="get">
-<div class="centerTwo">
-<button class="signOutButton">Sign Out</button>
-</div>
-</form>
-
- 
 <form action="/viewListings" method="get">
 <div class="container">
 <button class="button">View listings</button>

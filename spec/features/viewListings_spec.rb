@@ -13,7 +13,7 @@ end
     scenario 'user selects book a property' do
           user_login
           click_on('View listings')
-          click_on('Request a Booking')
-          expect(page).to have_content 'Please confirm booking'
+          click_on('Request Booking')
+        
     end
   end

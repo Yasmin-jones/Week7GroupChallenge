@@ -1,8 +1,215 @@
-<h1>Available Properties</h1>
+<!DOCTYPE html>
+<html>
+<title> View Listings Page </title>
+<head>
+<style>
+#blink {
+        font-size: 30px;
+        font-weight: bold;
+        font-family: sans-serif;
+        color: #1c87c9;
+        transition: 0.4s;
+      }
+
+.strokeme {
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+td, th {
+  border: 1px solid white;
+  border-collapse: collapse;
+  text-align: center;
+  padding: 8px;
+}
+
+tr:nth-child(odd) {
+  background-color: #96D4D4;
+}
+
+tr:nth-child(even) {
+  background-color: #FFF;
+}
+
+#bannerL
+    { 
+    position: center;
+    float: right;
+    }
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+.requestButton {
+  padding: 5px 10px;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #000;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 9px #999;
+
+  /* position:absolute;
+  top: 10px;
+  right: 10px; */
+}
+
+.requestButton:hover {background-color: #82EEFD}
+
+.requestButton :active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+</style>
+</head>
+
+
+
+<body style="background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTl8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80');
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;"> 
+<style>
+h1 {text-align: center;}
+h2 {text-align: center;}
+/* h3 {text-align: right;}  */
+h1 {
+   font-size: 400%; // makes font bigger on 50% 
+}
+</style>
+
+<form action="/" method="get">
+<div class="centerTwo">
+<button class="requestButton">Sign Out</button>
+</div>
+</form>
+
+<div class="strokeme">
+<h1 style="color: white;">
+  MakersBnB Available Listings 
+</h1>
+</div>
+
+<div class="strokeme">
+  <h2 id="blink">Book today <%= @name %> to get 20% off!</h2>
+    <script type="text/javascript">
+      var blink = document.getElementById('blink');
+      setInterval(function() {
+        blink.style.opacity = (blink.style.opacity == 0 ? 1 : 0);
+      }, 1000);
+    </script>
+  </div>
+
+  <div id="bannerL">
+
+<div class="strokeme">
+<h3 style="color: white;">
+  Create Your Booking
+</h3>
+</div>
+<label for="month">Month:
+</label>   
+ <select name="month" id="month">
+  <option value="January">January</option>
+  <option value="Febuary">Febuary</option>
+  <option value="March">March</option>
+  <option value="April">April</option>
+  <option value="May">May</option>
+  <option value="June">June</option>
+  <option value="July">July</option>
+  <option value="August">August</option>
+  <option value="September">September</option>
+  <option value="October">October</option>
+  <option value="November">November</option>
+  <option value="December">December</option>
+ </select>
+
+ <label for="location">Location:
+</label>   
+ <select name="location" id="location">
+  <option value="Miami">Miami</option>
+  <option value="Hampshire">Hampshire</option>
+ </select>
+
+
+<h3>Price Range</h3>
+
+<div class="slidecontainer">
+  <input type="range" min="100" max="2000" value="50" class="slider" id="myRange">
+  <p>Price: <span id="demo"></span></p>
+</div>
+
+<script>
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+</script>
+
+<form action="/requestBooking" method="get">
+<button class="requestButton">Request Booking</button>
+</form>
+
+</div>
+
+<div class="strokeme">
+<h3 style="color: white;">
+  Properties Currently Available 
+</h3>
+</div>
 
 <table>
   <tr>
-    <th>Property Details</th>
+  <th>Location</th>
+    <th>Description</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Price Per Night</th>
   </tr>
   <% @listings.each do |listing| %>
     <tr>
@@ -16,8 +223,7 @@
 </table>
 
 
-<form action="/request_booking" method="post">
-<a href="/request_booking">Request a Booking</a>
-</form>
+
+
 
 
